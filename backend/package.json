@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for moviemint site for create api build models fetch api",
+  "keywords": [
+    "MERN",
+    "Stack"
+  ],
+  "license": "ISC",
+  "author": "SDE'Raushan Raj",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11"
+  }
+}
