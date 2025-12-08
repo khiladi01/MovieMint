@@ -1,6 +1,6 @@
-# 🚀 Full Stack MVC Project (Production Ready)
+# 🚀 MovieMint MERN Full Stack MVC Project
 
-This project is my hands-on journey into building a real production-level full stack app using proper MVC architecture, modern tools, and secure auth practices. No shortcuts, no baby steps — just pure backend–frontend harmony.
+This project is my hands-on journey into building a production ready full stack application using proper MVC architecture, modern tools, and secure authentication methods. No shortcuts — just clean, structured backend and frontend development
 
 # 🏗️ Project Overview
 
