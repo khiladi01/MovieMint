@@ -8,7 +8,7 @@ function App() {
   async function callData() {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:4000/api/account", {
+      const res = await fetch("http://localhost:4000/api/account ", {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -49,10 +49,10 @@ function App() {
           <p className="text-md text-red-400">No User Found</p>
         )}
         <div>
-            <p className="text-2xl text-red-400">{`Name ${users.username}`}</p>
-            <p className="text-md text-slate-600">{`Email ${users.email}`}</p>
-            <p className="text-md text-slate-600">{`Phone ${users.phone}`}</p>
-            <p className="text-md text-slate-600">{`Password ${users.password}`}</p>
+            <p className="text-2xl text-red-400">{`Name ${users.Name}`}</p>
+            <p className="text-md text-slate-600">{`Email ${users.Email}`}</p>
+            <p className="text-md text-slate-600">{`Phone ${users.Phone}`}</p>
+            <p className="text-md text-slate-600">{`Password ${users.Password}`}</p>
         </div>
       </div>
     </>

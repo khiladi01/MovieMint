@@ -1,12 +1,22 @@
 import express from "express";
 const router = express.Router();
-import { registerUser } from "../models/login.model.js";
+import { Register } from "../models/register.model.js";
+import bcrypt from "bcrypt"
 
 // save data via post method
 export const createUser = async function (req , res) {
        try {
-    const {username , email , phone , password} = req.body
-    const userCreate = await registerUser.create({username , email , phone , password})
+    const {Name , Username , Email , Phone , Password , Confirmpassword} = req.body
+
+    if(!Name || !Username || !Email || !Phone || !Password || !Confirmpassword){
+       res.status(400).json({success: false , message: "All fields are mandatory"})
+       return false;
+    }else if(Password !== Confirmpassword){
+       res.status(400).json({success: false , message: "Password is != to Confirmpassword"})
+       return false;
+    }
+
+    const userCreate = await Register.create({Name , Username , Email , Phone , Password , Confirmpassword})
     res
       .status(201)
       .json({ success: true, message: "User created success", userCreate });
@@ -25,7 +35,7 @@ export const createUser = async function (req , res) {
 // fetch data via get method
 export const getUser = async function (req , res){
       try {
-    const userFind = await registerUser.findOne();
+    const userFind = await Register.findOne();
 
     res
       .status(200)
