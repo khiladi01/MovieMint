@@ -25,7 +25,7 @@ export const createUser = async function (req , res) {
 // fetch data via get method
 export const getUser = async function (req , res){
       try {
-    const userFind = await registerUser.find();
+    const userFind = await registerUser.findOne();
 
     res
       .status(200)
