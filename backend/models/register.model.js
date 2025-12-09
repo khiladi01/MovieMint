@@ -23,7 +23,7 @@ const registerSchema = new mongoose.Schema(
     Password: {
       type: String,
       requied: true,
-      match: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+      unique: true,
     },
     Confirmpassword: {
       type: String,

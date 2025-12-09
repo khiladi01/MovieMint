@@ -6,6 +6,7 @@ import bcrypt from "bcrypt"
 // save data via post method
 export const createUser = async function (req , res) {
        try {
+
     const {Name , Username , Email , Phone , Password , Confirmpassword} = req.body
 
     if(!Name || !Username || !Email || !Phone || !Password || !Confirmpassword){
@@ -16,7 +17,10 @@ export const createUser = async function (req , res) {
        return false;
     }
 
-    const userCreate = await Register.create({Name , Username , Email , Phone , Password , Confirmpassword})
+    const saltRounds = 10;
+    const hashPassword = await bcrypt.hash(Password , saltRounds)
+
+    const userCreate = await Register.create({Name , Username , Email , Phone , Password: hashPassword , Confirmpassword: hashPassword})
     res
       .status(201)
       .json({ success: true, message: "User created success", userCreate });
